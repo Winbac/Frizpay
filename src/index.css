@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background-color: #0C0F14;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #141920;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E2A3A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5ECC5E;
+}
+
+/* Sidebar active glow */
+.nav-item-active {
+  background: linear-gradient(90deg, rgba(94, 204, 94, 0.15) 0%, rgba(94, 204, 94, 0.05) 100%);
+  border-left: 3px solid #5ECC5E;
+}
+
+/* Card gradient */
+.card-gradient {
+  background: linear-gradient(135deg, #1a4a2e 0%, #0d2a1a 50%, #1a3a2e 100%);
+}
+
+/* Stat card hover */
+.stat-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(94, 204, 94, 0.1);
+}
+
+/* Chart area */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #1E2A3A;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(94, 204, 94, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(94, 204, 94, 0); }
+}
+
+.pulse-green {
+  animation: pulse-green 2s infinite;
+}
