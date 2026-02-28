@@ -1,9 +1,9 @@
-import StatCard from './StatCard'
-import VirtualCard from './VirtualCard'
-import IncomeChart from './IncomeChart'
-import RecentTransactions from './RecentTransactions'
-import ScheduledTransfers from './ScheduledTransfers'
-import QuickActions from './QuickActions'
+import StatCard from "./StatCard";
+import VirtualCard from "./VirtualCard";
+import IncomeChart from "./IncomeChart";
+import RecentTransactions from "./RecentTransactions";
+import ScheduledTransfers from "./ScheduledTransfers";
+import QuickActions from "./QuickActions";
 
 export default function Dashboard() {
   return (
@@ -11,8 +11,12 @@ export default function Dashboard() {
       {/* Welcome Row */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-white font-bold text-xl">Welcome Back, Chandan 👋</h2>
-          <p className="text-text-muted text-sm mt-0.5">Here's what's happening with your finances.</p>
+          <h2 className="text-base-content/60 font-bold text-xl">
+            Welcome Back, Chandan 👋
+          </h2>
+          <p className="text-base-content/50 text-sm mt-0.5">
+            Here's what's happening with your finances.
+          </p>
         </div>
         <QuickActions />
       </div>
@@ -53,35 +57,52 @@ export default function Dashboard() {
         {/* Right: Card + Transfers */}
         <div className="space-y-4">
           {/* Virtual Cards */}
-          <div className="bg-bg-card rounded-2xl p-5 border border-border-dark">
+          <div className="bg-base-200 rounded-2xl p-5 border border-base-300">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-white font-semibold text-sm">Virtual Cards</h3>
-              <button className="text-text-muted hover:text-white transition-colors">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>
+              <h3 className="text-base-content/60 font-semibold text-sm">
+                Virtual Cards
+              </h3>
+              <button className="text-base-content/50 hover:text-base-content/60 transition-colors">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <circle cx="12" cy="12" r="1" />
+                  <circle cx="19" cy="12" r="1" />
+                  <circle cx="5" cy="12" r="1" />
                 </svg>
               </button>
             </div>
-            <VirtualCard balance="$400.00" cardNumber="6744 5698 472 0124" expiry="09/24" />
+            <VirtualCard
+              balance="$400.00"
+              cardNumber="6744 5698 472 0124"
+              expiry="09/24"
+            />
 
             {/* Card actions */}
             <div className="grid grid-cols-3 gap-2 mt-4">
               {[
-                { label: 'Send', icon: '↑' },
-                { label: 'Add Funds', icon: '+' },
-                { label: 'Freeze', icon: '❄' },
+                { label: "Send", icon: "↑" },
+                { label: "Add Funds", icon: "+" },
+                { label: "Freeze", icon: "❄" },
               ].map(({ label, icon }) => (
                 <button
                   key={label}
-                  className="flex flex-col items-center gap-1 py-2 rounded-xl bg-bg-elevated hover:bg-border-dark transition-colors"
+                  className="flex flex-col items-center gap-1 py-2 rounded-xl bg-base-300 hover:bg-border-dark transition-colors"
                 >
                   <span className="text-primary text-sm">{icon}</span>
-                  <span className="text-text-muted text-[10px]">{label}</span>
+                  <span className="text-base-content/50 text-[10px]">
+                    {label}
+                  </span>
                 </button>
               ))}
             </div>
 
-            <button className="w-full mt-3 py-2.5 rounded-xl border border-border-dark text-text-soft text-xs font-medium hover:bg-bg-elevated transition-colors">
+            <button className="w-full mt-3 py-2.5 rounded-xl border border-base-300 text-base-content/60 text-xs font-medium hover:bg-base-300 transition-colors">
               View Card History
             </button>
           </div>
@@ -90,5 +111,5 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -15,7 +15,7 @@ export default {
         "border-dark": "#1E2A3A",
       },
       fontFamily: {
-        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+        jakarta: ['"Plus Jakarta Sans"', "sans-serif"],
       },
     },
   },
@@ -23,6 +23,7 @@ export default {
   daisyui: {
     themes: [
       {
+        // ✅ Your existing dark theme
         frizpay: {
           primary: "#5ECC5E",
           secondary: "#1A2232",
@@ -37,6 +38,22 @@ export default {
           error: "#EF4444",
         },
       },
+      {
+        // ✅ New light theme
+        frizpay_light: {
+          primary: "#5ECC5E",
+          secondary: "#e8f5e9",
+          accent: "#4AB84A",
+          neutral: "#f4f6f9",
+          "base-100": "#f4f6f9",
+          "base-200": "#ffffff",
+          "base-300": "#e2e8f0",
+          info: "#3B82F6",
+          success: "#5ECC5E",
+          warning: "#F59E0B",
+          error: "#EF4444",
+        },
+      },
     ],
   },
-}
+};
